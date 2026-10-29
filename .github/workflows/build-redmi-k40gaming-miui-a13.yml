@@ -114,6 +114,16 @@ jobs:
       - name: 🪝 Patch Kernel of SUSFS
         uses: ./.github/workflows/patch-susfs
 
+      - name: 🩹 Fix SUSFS rejects for ares
+        run: |
+          cd $GITHUB_WORKSPACE/device_kernel
+
+          # aresin 的 fs/proc/task_mmu.c 与上游 4.14 补丁基线不同, 需手工修正两处:
+          # 1) 缺 linux/susfs_def.h, 导致 SUSFS_IS_INODE_* 宏未声明(编译报 implicit declaration)
+          # 2) 本内核 smap_gather_stats 返回 void, 补丁写入的 return 0 不合法
+          # 补丁见 Patches/k40g/ares-susfs-fix.patch, build-env 已把 Patches 移到 /tmp
+          patch -p1 < /tmp/Patches/k40g/ares-susfs-fix.patch
+
       - name: 🔗 Patch for no-kprobe
         uses: ./.github/workflows/patch-no-kprobe
 
