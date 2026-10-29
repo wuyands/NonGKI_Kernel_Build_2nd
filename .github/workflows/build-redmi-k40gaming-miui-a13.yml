@@ -111,6 +111,21 @@ jobs:
       - name: ⚙️ Get neccssary tools
         uses: ./.github/workflows/build-ready
 
+      - name: 🏷️ Kernel version string (official style)
+        run: |
+          cd $GITHUB_WORKSPACE/device_kernel
+
+          # 1) 清掉社区内核写死的 CONFIG_LOCALVERSION="AbzRaider-S-OSS-v1.0",
+          #    与小米官方 ares-r-oss 的 defconfig 保持一致(官方无此项)
+          sed -i 's|^CONFIG_LOCALVERSION=.*|CONFIG_LOCALVERSION=""|' arch/arm64/configs/ares_user_defconfig
+
+          # 2) 用内核自带的 .scmversion 固定 scm 后缀。
+          #    setlocalversion 命中 .scmversion 时直接返回其内容, 不再执行 dirty 判断,
+          #    因此补丁改动不会产生 -dirty, 且后缀仍是上游 HEAD 的短 SHA
+          SHA=$(git rev-parse --short HEAD)
+          printf -- '-g%s\n' "$SHA" > .scmversion
+          echo "[+] kernelrelease will be: 4.14.186-g${SHA}"
+
       - name: 🪝 Patch Kernel of SUSFS
         uses: ./.github/workflows/patch-susfs
 
