@@ -18,6 +18,7 @@
 | Xiaomi Redmi K20 Pro | All | raphael | [4.14/SOVIET-ANDROID/SOVIET-STAR-OSS](https://github.com/SOVIET-ANDROID/kernel_xiaomi_raphael) | AOSP Based | 15 | AnyKernel3 | BakaSU | ✅ | Inline | ❌ | ❌ | ❌ | ❌ | Stable |  
 | Xiaomi Redmi K20 Pro | All | raphael | [4.14/Laulan56/sm8150](https://github.com/Laulan56/android_kernel_xiaomi_sm8150) | MIUI 12.5 | 11 | AnyKernel3 | BakaSU | ✅ | Inline | ❌ | ❌ | ❌ | ❌ | Stable |  
 | Xiaomi Redmi K30 Ultra | All | cezanne | [4.14/HuaLiMao-AQ/AOSP](https://github.com/HuaLiMao-AQ/android_kernel_xiaomi_mt6873) | AOSP Based | 14 | AnyKernel3 | BakaSU | ✅ | Inline | ❌ | ✅ | ✅ | ❌ | Stable |  
+| Xiaomi Redmi K40 Gaming | CN | ares | [4.14/Tkpointz/aresin](https://github.com/Tkpointz/android_kernel_aresin) | MIUI 14 | 13 | AnyKernel3 | BakaSU | ✅ | Syscall | ❌ | ❌ | ❌ | ❌ | Testing |  
 | Xiaomi Redmi Note 7 | CN | lavender | [4.19/pix106/southwest](https://github.com/pix106/android_kernel_xiaomi_southwest-4.19) | AOSP Based | 15 | AnyKernel3 | BakaSU | ✅ | Inline | ❌ | ❌ | ❌ | ❌ | Stable |  
 | Xiaomi Redmi Note 11 Pro 5G | INT | veux | [5.4/dereference23/eplus](https://github.com/dereference23/kernel_xiaomi_sm6375) | AOSP Based | 16 | AnyKernel3 | BakaSU | ✅ | Inline | ❌ | ❌ | ❌ | ❌ | Stable |  
 

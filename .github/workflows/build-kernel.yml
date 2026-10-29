@@ -142,6 +142,13 @@ jobs:
     uses: ./.github/workflows/build-redmi-k30ultra-aosp-a14.yml
     secrets: inherit
 
+  build-redmi-k40gaming-miui-a13:
+    name: "Xiaomi Redmi K40 Gaming (MIUI 14 A13)"
+    strategy:
+      fail-fast: true
+    uses: ./.github/workflows/build-redmi-k40gaming-miui-a13.yml
+    secrets: inherit
+
   build-redmi-note7-aosp-a15:
     name: "Xiaomi Redmi Note 7 (AOSP Based A15)"
     strategy:
