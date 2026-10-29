@@ -1,0 +1,2 @@
+# 补丁必须保持 LF, 否则 patch 在应用时会因 CRLF 上下文失配而失败
+*.patch text eol=lf
