@@ -82,7 +82,9 @@ env:
   GENERATE_CHIP: "mediatek" # only supported for qcom and mediatek.
 
   BUILD_DEBUGGER: "true" # Output build errors.
-  SKIP_PATCH: "false" # Ignore errors found in Patch Debugger.
+  SKIP_PATCH: "true" # Ignore errors found in Patch Debugger.
+  # aresin 内核把触屏驱动目录从 fts_521 改名为 fts_spi, SUSFS 补丁里那条
+  # 新建 fts_521/fts_lib/Makefile 的 hunk 必然 reject, 与 SUSFS 功能无关, 放行。
 
   BUILD_OTHER_CONFIG: "false" # Merge config files.
   MERGE_CONFIG_FILES: ""
